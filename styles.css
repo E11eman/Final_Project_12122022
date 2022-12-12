@@ -1,0 +1,135 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  background-color: orange;
+}
+
+#black {
+  background-color: black;
+  color: white;
+}
+
+#GT {
+  color: orange;
+  font-size: 5vh;
+}
+
+.movies {
+  margin: 0 15% 0 18%;
+}
+
+cart {
+  position: relative;
+}
+
+cart button {
+  background: none;
+  border: 0;
+  color: orange;
+  cursor: pointer;
+}
+
+cart i {
+  font-size: 2rem;
+}
+
+cart .total-quantity {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: lightblue;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  height: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 2rem;
+}
+
+cart .cart-dropdown {
+  background: orange;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-size: 1.3rem;
+  overflow: auto;
+  padding: 0 1rem;
+  position: absolute;
+  right: 0;
+  width: 12rem;
+}
+
+cart .cart-dropdown .cart-dropdown__list {
+  list-style: none;
+}
+
+cart .cart-dropdown .cart-dropdown__list li {
+  margin: 1rem 0;
+}
+
+.moivediv {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 2rem;
+  padding: 1rem;
+}
+
+.cart {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cart__button {
+  background: orange;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 3rem;
+  width: 5rem;
+}
+
+.cart__quantity {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.cart-counter {
+  position: relative;
+  color: orange;
+  background-color: black;
+  font-size: 2vh;
+  margin: 0 0 2% 0;
+}
+
+#hidetable {
+  display: none;
+}
+
+#hidetable .catigories {
+  font-size: 4vh;
+  text-align: center;
+}
+
+#hidetable tbody {
+  text-align: center;
+  font-size: 2vh;
+}
+/*# sourceMappingURL=styles.css.map */

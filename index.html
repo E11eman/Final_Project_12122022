@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Name:       Luke Elleman
+        Date:       December 12th, 2022
+        Course:     CIS-131-102
+        Assignment: Movie Ticket Purchase (Final Project)
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Get Movie Tickets</title>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-black">
+            <div class="container-fluid">
+                <button class="navbar-brand" @click=addItem id="GT" style="background-color: black;">Get Tickets</button>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              </div>
+              <button>
+                  <i @click=showCart class="fa fa-shopping-cart" style="font-size: 2.5rem; color: orange; background-color: black; padding: .5vh;"></i>
+              </button>
+              <span v-if="cartcounter > 0" class="cart-counter">{{cartcounter}}</span>
+            </div>
+          </nav>
+        
+          <section class="movies">
+            <table class="table" id="hidetable">
+                <thead>
+                  <tr class="catigories">
+                    <th scope="col">Movies</th>
+                    <th scope="col">Adult</th>
+                    <th scope="col">Child</th>
+                    <th scope="col">SubTotal</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody id="add">
+                  <tr v-for="">
+                    <th scope="row" style="font-weight: bold;">Black Adam</th> <!--Was trying to display {{addItem ()}} but it would break so I just typed in Black Adam so the Display wasn't blank-->
+                    <td>
+                        <button @click="Acounter -= 1" class="cart__button">-</button>
+                        {{Acounter}} 
+                        <button @click="Acounter += 1" class="cart__button">+</button>
+                    </td>
+                    <td>
+                        <button @click="Chcounter -= 1" class="cart__button">-</button>
+                        {{Chcounter}} 
+                        <button @click="Chcounter += 1" class="cart__button">+</button>
+                    </td>
+                    <td>${{counter ()}}</td>
+                    
+                    <!--Remove Button Removes Item-->
+                    <td><button @click=removeItem style="padding: 2%; font-size: 2vh; background-color: black; color: orange;">REMOVE</button></td>
+                  </tr>
+                </tbody>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>Total</th>
+                <td>${{counter ()}}</td>
+            </table>
+            <div class="row" style="padding-top: 3vh;">
+                <div id="black" class="col-4 card moivediv info" style="width: 20.5rem;" v-for="ticket in info.slice(0,3)">
+                    <img v-bind:src="'https://image.tmdb.org/t/p/w500'+ticket.poster_path" class="card-img-top">
+
+                        <div class="card-body item-add">
+                            <div class="row">
+                                <button @click="Acounter +=1, cartcounter +=1" class="cart__button col-4 item-button" style="margin: 0 20% 0 5%">Adult<p class="item-price">X$6.99</p></button>
+                                <button @click="Chcounter +=1, cartcounter +=1" class="cart__button col-4 item-button">Child<p class="item-price">X$3.99</p></button> 
+                            </div>
+                            <h5 class="card-title mtitle">{{ticket.title}}</h5>
+                            <p class="card-text">{{ticket.overview}}</p>
+                        </div>
+                </div>
+            </div>
+
+            <div class="cartItems">
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
